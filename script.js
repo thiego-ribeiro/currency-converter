@@ -65,3 +65,13 @@ function convertyCurrency(amount, price, symbol) {
     alert("Não foi possivel converter.")
   }
 }
+
+// Formata a moeda em real brasileiro.
+function formatCurrencyBRL(value) {
+
+  // Converte para número para utilizar o toLocaleString para formatar no padrão BRL (R$ 00,00).
+  return Number(value).toLocaleString("pt-BR", {
+    style: "currency",
+    currency: "BRL",
+  })
+}
