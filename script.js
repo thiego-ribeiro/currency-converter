@@ -16,3 +16,20 @@ amount.addEventListener("input", () => {
   const hasCharactersRegex = /\D+/g
   amount.value = amount.value.replace(hasCharactersRegex, "")
 })
+
+// Capturando o evento de submit (enviar) do formulário.
+form.onsubmit = (event) => {
+  event.preventDefault()
+
+  switch (currency.value) {
+    case "USD":
+      convertyCurrency(amount.value, USD, "US$")
+      break
+    case "EUR":
+      convertyCurrency(amount.value, EUR, "€")
+      break
+    case "GBP":
+      convertyCurrency(amount.value, GBP, "£")
+      break
+  }
+}
