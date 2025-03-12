@@ -10,3 +10,9 @@ const currency = document.getElementById("currency")
 const footer = document.querySelector("main footer")
 const description = document.getElementById("description")
 const result = document.getElementById("result")
+
+// Manipulando o Input amount para receber somente números.
+amount.addEventListener("input", () => {
+  const hasCharactersRegex = /\D+/g
+  amount.value = amount.value.replace(hasCharactersRegex, "")
+})
